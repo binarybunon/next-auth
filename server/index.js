@@ -29,7 +29,7 @@ app.use(cookieParser());
 app.use(morgan('dev'));
 
 // route
-readdirSync('./routes').map((r) => app.use('/api', require(`./routes/${r}`)));
+readdirSync('./routes').map((r) => app.use(`/api`, require(`./routes/${r}`)));
 // csrf
 app.use(csrfProtection);
 

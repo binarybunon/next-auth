@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
+import useAuth from '../hooks/useAuth';
 const data = () => {
+	const { loadData } = useAuth();
+
+	useEffect(async () => {
+		const data = await loadData();
+		console.log(data);
+	}, []);
+
 	return (
 		<div>
 			<h1>Data</h1>
