@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import useAuth from '../hooks/useAuth';
-const data = () => {
+const Data = () => {
 	const { loadData } = useAuth();
 
 	useEffect(async () => {
@@ -22,4 +22,4 @@ const data = () => {
 	);
 };
 
-export default data;
+export default Data;

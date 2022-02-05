@@ -1,13 +1,13 @@
-import express from 'express';
-import cors from 'cors';
-import { readdirSync } from 'fs';
-import mongoose from 'mongoose';
-import csrf from 'csurf';
-import cookieParser from 'cookie-parser';
+const express = require('express');
+const cors = require('cors');
+const { readdirSync } = require('fs');
+const mongoose = require('mongoose');
+var csurf = require('csurf');
+const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 require('dotenv').config();
 
-const csrfProtection = csrf({ cookie: true });
+const csrfProtection = csurf({ cookie: true });
 
 // create express app
 const app = express();
@@ -18,6 +18,7 @@ mongoose
 		useFindAndModify: false,
 		useUnifiedTopology: true,
 		useCreateIndex: true,
+		useNewUrlParser: true,
 	})
 	.then(() => console.log('**DB CONNECTED**'))
 	.catch((err) => console.log('DB CONNECTION ERR => ', err));

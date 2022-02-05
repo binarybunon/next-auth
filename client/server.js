@@ -13,11 +13,12 @@ app
 	.prepare()
 	.then(() => {
 		const server = express();
+
 		if (dev) {
 			server.use(
 				'/api',
 				createProxyMiddleware({
-					target: 'http://localhost:8000',
+					target: 'https://next-auth-sample.herokuapp.com',
 					changeOrigin: true,
 				})
 			);

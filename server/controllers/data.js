@@ -1,4 +1,4 @@
-export const userList = async (req, res) => {
+module.exports.userList = async (req, res) => {
 	try {
 		const users = [{}];
 		return res.json(users);

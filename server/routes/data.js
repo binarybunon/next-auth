@@ -1,12 +1,12 @@
-import express from 'express';
+const express = require('express');
 
 const router = express.Router();
 
 // middleware
-import { requireSignin } from '../middlewares';
+const { requireSignin } = require('../middlewares');
 
 // controllers
-import { userList } from '../controllers/data';
+const { userList } = require('../controllers/data');
 
 router.get('/data', userList);
 
